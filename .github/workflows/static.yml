@@ -31,21 +31,48 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: "18"
           cache: 'npm'
-      - name: Build
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Debug directory structure
         run: |
-          npm ci
-          npm run build
+          echo "Current directory:"
+          ls -la
+
+      - name: Build
+        run: npm run build
+
+      - name: Debug build output
+        run: |
+          echo "Build output:"
+          ls -la
+          if [ -d "dist" ]; then
+            echo "dist directory exists"
+          elif [ -d "build" ]; then
+            echo "build directory exists"
+          elif [ -d "docs" ]; then
+            echo "docs directory exists"
+          else
+            echo "No standard build directory found"
+            find . -type d -maxdepth 2
+          fi
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
+          # We'll determine the correct path based on the debug output
           path: './dist'
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
