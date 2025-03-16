@@ -4,7 +4,7 @@ import { initTelegramWebApp, isTelegramWebApp, getTelegramUser, showBackButton, 
 import Card from './components/Card'
 import Button from './components/Button'
 declare module 'feather-icons-react';
-import { FiUser, FiBriefcase, FiCode, FiMail, FiGithub, FiSend, FiArrowLeft, FiExternalLink } from 'react-icons/fi'
+import { FiUser, FiBriefcase, FiCode, FiGithub, FiSend, FiArrowLeft, FiExternalLink } from 'react-icons/fi'
 import ThemeToggle from './components/ThemeToggle'
 import ScreenshotsCarousel from './components/ScreenshotsCarousel'
 
