@@ -41,27 +41,48 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Debug directory structure
+      - name: Modify vite.config.ts for GitHub Pages
         run: |
-          echo "Current directory:"
-          ls -la
+          # Create or update vite.config.ts to use the correct base path for GitHub Pages
+          if [ -f "vite.config.ts" ]; then
+            echo "Modifying existing vite.config.ts"
+            sed -i 's/base: .*/base: "\/.\/",/g' vite.config.ts
+            # If no base property exists, add it
+            if ! grep -q "base:" vite.config.ts; then
+              sed -i '/defineConfig/a \  base: "\/",\n' vite.config.ts
+            fi
+            cat vite.config.ts
+          else
+            echo "Creating new vite.config.ts"
+            echo 'import { defineConfig } from "vite";
+            import react from "@vitejs/plugin-react";
+
+            export default defineConfig({
+              base: "/",
+              plugins: [react()],
+            });' > vite.config.ts
+          fi
 
       - name: Build
         run: npm run build
 
-      - name: Debug build output
+      - name: Find build directory
+        id: find-build
         run: |
-          echo "Build output:"
-          ls -la
           if [ -d "dist" ]; then
-            echo "dist directory exists"
+            echo "build_dir=dist" >> $GITHUB_OUTPUT
+            echo "Found dist directory"
           elif [ -d "build" ]; then
-            echo "build directory exists"
+            echo "build_dir=build" >> $GITHUB_OUTPUT
+            echo "Found build directory"
           elif [ -d "docs" ]; then
-            echo "docs directory exists"
+            echo "build_dir=docs" >> $GITHUB_OUTPUT
+            echo "Found docs directory"
           else
-            echo "No standard build directory found"
+            echo "No standard build directory found, listing all directories:"
             find . -type d -maxdepth 2
+            echo "build_dir=." >> $GITHUB_OUTPUT
+            echo "Using current directory as fallback"
           fi
 
       - name: Setup Pages
@@ -70,8 +91,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # We'll determine the correct path based on the debug output
-          path: './dist'
+          path: './${{ steps.find-build.outputs.build_dir }}'
 
       - name: Deploy to GitHub Pages
         id: deployment
