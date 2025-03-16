@@ -4,7 +4,7 @@ import { initTelegramWebApp, isTelegramWebApp, getTelegramUser, showBackButton, 
 import Card from './components/Card'
 import Button from './components/Button'
 declare module 'feather-icons-react';
-import FeatherIcon from 'feather-icons-react'
+import { FiUser, FiBriefcase, FiCode, FiMail, FiGithub, FiSend, FiArrowLeft, FiExternalLink } from 'react-icons/fi'
 import ThemeToggle from './components/ThemeToggle'
 import ScreenshotsCarousel from './components/ScreenshotsCarousel'
 
@@ -398,7 +398,7 @@ function App() {
 
           <div className="info-links">
             <a href="https://github.com/ananasDDA" className="info-link">
-              <FeatherIcon icon="github" size={20} />
+              <FiGithub size={20} />
               <span>GitHub</span>
             </a>
             {/* <a href="https://linkedin.com/in/your-profile" className="info-link">
@@ -410,7 +410,7 @@ function App() {
               <span>Email</span>
             </a> */}
             <a href="https://t.me/ananasDDA" className="info-link">
-              <FeatherIcon icon="send" size={20} />
+              <FiSend size={20} />
               <span>Telegram</span>
             </a>
           </div>
@@ -427,7 +427,7 @@ function App() {
       <div className="project-details-container">
         <div className="project-details-header">
           <button className="back-button" onClick={goBack}>
-            <FeatherIcon icon="arrow-left" size={20} />
+            <FiArrowLeft size={20} />
             <span>Назад</span>
           </button>
           <h2>{selectedProject.title}</h2>
@@ -464,7 +464,7 @@ function App() {
           {selectedProject.link && (
             <div className="project-details-actions">
               <Button type="primary" onClick={() => window.open(selectedProject.link, '_blank')}>
-                <FeatherIcon icon="external-link" size={16} />
+                <FiExternalLink size={16} />
                 <span>Открыть проект</span>
               </Button>
             </div>
@@ -611,21 +611,21 @@ function App() {
               className={`nav-button ${activeTab === 'about' ? 'active' : ''}`}
               onClick={() => setActiveTab('about')}
             >
-              <FeatherIcon icon="user" size={20} />
+              <FiUser size={20} />
               <span>Обо мне</span>
             </button>
             <button
               className={`nav-button ${activeTab === 'projects' ? 'active' : ''}`}
               onClick={() => setActiveTab('projects')}
             >
-              <FeatherIcon icon="briefcase" size={20} />
+              <FiBriefcase size={20} />
               <span>Проекты</span>
             </button>
             <button
               className={`nav-button ${activeTab === 'skills' ? 'active' : ''}`}
               onClick={() => setActiveTab('skills')}
             >
-              <FeatherIcon icon="code" size={20} />
+              <FiCode size={20} />
               <span>Навыки</span>
             </button>
             {/* <button
