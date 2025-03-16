@@ -449,48 +449,44 @@ h2 {
     padding: 12px;
   }
 
-  /* Стили для подробного описания проекта на мобильных устройствах */
   .project-details-container {
     padding: 8px 0;
-    width: 100vw;
-    margin-left: -2px; /* Компенсируем padding контейнера */
-  }
-
-  .project-details-card {
-    padding: 10px;
-    border-radius: 0; /* Убираем скругление углов */
-    width: 100%;
-    box-sizing: border-box;
+    margin: 0 -2px;
+    width: calc(100% + 4px);
   }
 
   .project-details-image-container {
-    width: 100vw;
-    margin-left: -2px; /* Компенсируем padding контейнера */
+    margin: 0 0 12px 0;
     border-radius: 0;
-    height: 200px; /* Немного уменьшаем высоту */
+    height: 200px;
+  }
+
+  .project-details-card {
+    border-radius: 0;
+    margin: 0;
+    width: 100%;
   }
 
   .project-full-description {
     margin: 12px 0;
+    font-size: 0.95rem;
   }
 
-  /* Делаем изображения в описании проекта на всю ширину */
-  .project-full-description img {
-    width: 100vw !important;
-    max-width: 100vw !important;
-    margin-left: -10px !important; /* Компенсируем padding карточки */
-    border-radius: 0 !important;
+  .project-full-description h2 {
+    font-size: 1.3rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
   }
 
-  /* Стили для карусели скриншотов */
+  .project-full-description h3 {
+    font-size: 1.1rem;
+    margin-top: 16px;
+    margin-bottom: 8px;
+  }
+
   .screenshots-carousel {
-    width: 100vw;
-    margin-left: -10px; /* Компенсируем padding карточки */
-  }
-
-  .carousel-slide img {
-    width: 100vw;
-    border-radius: 0;
+    margin: 0 -10px;
+    width: calc(100% + 20px);
   }
 }
 
@@ -510,16 +506,22 @@ h2 {
   .project-details-card {
     padding: 16px;
   }
-
-  .project-full-description img {
-    max-width: 100% !important;
-  }
 }
 
 @media (min-width: 769px) {
   .app-container {
     max-width: 800px;
     padding: 0 20px;
+  }
+
+  .project-details-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
   }
 }
 
@@ -539,6 +541,7 @@ h2 {
 /* Стили для страницы проекта */
 .project-details-container {
   padding: 16px 0;
+  width: 100%;
 }
 
 .project-details-header {
