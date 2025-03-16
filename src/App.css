@@ -425,21 +425,38 @@ h2 {
 /* Медиа-запросы для адаптивности */
 @media (max-width: 480px) {
   .app-container {
-    padding: 0 5px;
+    padding: 0 2px;
+  }
+
+  #root {
+    padding: 0.5rem;
   }
 
   .card {
-    padding: 12px;
+    padding: 10px;
+    border-radius: 8px;
   }
 
   .app-content {
-    padding: 10px 0;
+    padding: 5px 0;
+  }
+
+  .project-content {
+    padding: 10px;
+  }
+
+  .project-details-card {
+    padding: 12px;
   }
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
   .app-container {
-    padding: 0 10px;
+    padding: 0 5px;
+  }
+
+  #root {
+    padding: 1rem;
   }
 }
 
