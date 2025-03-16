@@ -3,6 +3,7 @@ import './App.css'
 import { initTelegramWebApp, isTelegramWebApp, getTelegramUser, showBackButton, hideBackButton } from './utils/telegramWebApp'
 import Card from './components/Card'
 import Button from './components/Button'
+declare module 'feather-icons-react';
 import FeatherIcon from 'feather-icons-react'
 import ThemeToggle from './components/ThemeToggle'
 import ScreenshotsCarousel from './components/ScreenshotsCarousel'
@@ -34,7 +35,6 @@ type SkillCategory = {
 
 function App() {
   const [activeTab, setActiveTab] = useState<'about' | 'projects' | 'skills' | 'contact'>('about');
-  const [isInTelegram, setIsInTelegram] = useState(false);
   const [userName, setUserName] = useState<string | null>(null);
   const [isDarkMode, setIsDarkMode] = useState(true);
 
@@ -46,7 +46,6 @@ function App() {
     // Инициализация Telegram Web App
     if (isTelegramWebApp()) {
       initTelegramWebApp();
-      setIsInTelegram(true);
       const user = getTelegramUser();
       if (user) {
         setUserName(user.first_name);
@@ -582,6 +581,7 @@ function App() {
 
   return (
     <div className="app-container">
+      {isTelegramWebApp() && <div className="telegram-badge">Running in Telegram</div>}
       <div className="gradient-background">
         {/* Градиентный фон в стиле Geist UI */}
         <div className="gradient-circle red"></div>
