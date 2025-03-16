@@ -342,27 +342,56 @@ function App() {
 
   const skillCategories: SkillCategory[] = [
     {
+      name: 'Языки программирования',
+      skills: [
+        { name: 'Python', level: 5 },
+        { name: 'JavaScript/TypeScript', level: 5 },
+        { name: 'SQL', level: 4 },
+        { name: 'HTML/CSS', level: 4 },
+        { name: 'C++', level: 3 },
+        { name: 'GO', level: 3 },
+        { name: 'bash', level: 3 },
+        { name: 'C', level: 2 },
+        { name: 'Assembly', level: 2 },
+        { name: 'Swift', level: 2 }
+      ]
+    },
+    {
       name: 'Frontend',
       skills: [
         { name: 'React', level: 5 },
-        { name: 'TypeScript', level: 4 },
-        { name: 'CSS/SCSS', level: 4 }
+        { name: 'CSS/SCSS', level: 4 },
+        { name: 'Responsive Design', level: 4 }
       ]
     },
     {
       name: 'Backend',
       skills: [
-        { name: 'Node.js', level: 3 },
+        { name: 'Node.js', level: 4 },
+        { name: 'Telegram Bot API', level: 5 },
         { name: 'Express', level: 3 },
-        { name: 'MongoDB', level: 2 }
+        { name: 'MongoDB', level: 3 }
       ]
     },
     {
-      name: 'Инструменты',
+      name: 'DevOps & Инструменты',
       skills: [
         { name: 'Git', level: 4 },
-        { name: 'Docker', level: 3 },
-        { name: 'Figma', level: 4 }
+        { name: 'Docker', level: 4 },
+        { name: 'Kubernetes', level: 3 },
+        { name: 'GitLab', level: 4 },
+        { name: 'Jenkins', level: 3 },
+        { name: 'Jira', level: 4 },
+        { name: 'Postman', level: 4 },
+        { name: 'Selenium WebDriver', level: 3 }
+      ]
+    },
+    {
+      name: 'Операционные системы',
+      skills: [
+        { name: 'Linux', level: 4 },
+        { name: 'Windows', level: 4 },
+        { name: 'MacOS', level: 4 }
       ]
     }
   ];

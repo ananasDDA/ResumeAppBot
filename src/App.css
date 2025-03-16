@@ -316,7 +316,7 @@ h2 {
 .skills-container {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 24px;
+  gap: 20px;
 }
 
 .skills-card {
@@ -488,6 +488,19 @@ h2 {
     margin: 0 -10px;
     width: calc(100% + 20px);
   }
+
+  .skills-list {
+    gap: 8px;
+  }
+
+  .skill-item {
+    font-size: 0.9rem;
+  }
+
+  .skill-level-dot {
+    width: 6px;
+    height: 6px;
+  }
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
@@ -522,6 +535,10 @@ h2 {
   .projects-grid {
     grid-template-columns: 1fr 1fr;
     gap: 24px;
+  }
+
+  .skills-container {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
