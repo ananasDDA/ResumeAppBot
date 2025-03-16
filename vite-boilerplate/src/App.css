@@ -1,0 +1,583 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Основные стили в стиле Geist UI */
+.app-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 16px;
+  box-sizing: border-box;
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.gradient-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 550px;
+  z-index: -1;
+  background: var(--geist-background);
+  overflow: hidden;
+}
+
+.gradient-background::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(121, 40, 202, 0.3) 0%, rgba(0, 0, 0, 0) 70%);
+  filter: blur(50px);
+}
+
+.gradient-background::after {
+  content: '';
+  position: absolute;
+  top: -150px;
+  left: 30%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 0, 128, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
+  filter: blur(50px);
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  margin-bottom: 24px;
+}
+
+.logo {
+  color: var(--geist-foreground);
+}
+
+.app-content {
+  margin-bottom: 80px; /* Оставляем место для навигации */
+}
+
+/* Навигация */
+.app-navigation {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  background-color: rgba(5, 5, 5, 0.8);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid var(--geist-accent-2);
+  padding: 12px 0;
+  z-index: 100;
+}
+
+.nav-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: transparent;
+  border: none;
+  color: var(--geist-accent-5);
+  font-size: 12px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.nav-button span {
+  margin-top: 4px;
+}
+
+.nav-button.active {
+  color: var(--geist-foreground);
+}
+
+.nav-button:hover {
+  color: var(--geist-foreground);
+}
+
+/* Секции */
+.section {
+  animation: fadeIn 0.3s ease-in-out;
+  padding: 16px 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header {
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.highlight {
+  background: linear-gradient(90deg, var(--geist-highlight-purple), var(--geist-highlight-pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: var(--geist-accent-5);
+  margin-bottom: 24px;
+}
+
+.section-description {
+  color: var(--geist-accent-5);
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* Обо мне */
+.about-card {
+  margin-bottom: 24px;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.about-content p {
+  line-height: 1.6;
+}
+
+.info-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.info-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+  border-radius: var(--geist-radius);
+  background-color: var(--geist-accent-1);
+  color: var(--geist-foreground);
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.info-link:hover {
+  background-color: var(--geist-accent-2);
+  text-decoration: none;
+}
+
+/* Проекты */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.project-card {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.project-image-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.05);
+}
+
+.project-content {
+  padding: 16px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-content h3 {
+  margin-bottom: 8px;
+}
+
+.project-content p {
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.project-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.technology-tag {
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: var(--geist-radius);
+  background-color: var(--geist-accent-1);
+  color: var(--geist-accent-5);
+}
+
+/* Навыки */
+.skills-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.skills-card {
+  height: 100%;
+}
+
+.skills-card h3 {
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--geist-accent-2);
+}
+
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+}
+
+.skill-info {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skill-name {
+  font-weight: 500;
+}
+
+.skill-level {
+  display: flex;
+  gap: 4px;
+}
+
+.skill-level-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--geist-accent-2);
+}
+
+.skill-level-dot.active {
+  background-color: var(--geist-success);
+}
+
+/* Контакты */
+.contact-card {
+  margin-bottom: 24px;
+}
+
+.contact-content {
+  text-align: center;
+}
+
+.contact-intro {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.contact-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  background-color: var(--geist-accent-1);
+  border-radius: var(--geist-radius);
+  text-decoration: none;
+  color: var(--geist-foreground);
+  font-weight: 500;
+  transition: all 0.2s;
+  border: 1px solid var(--geist-accent-2);
+}
+
+.contact-link:hover {
+  border-color: var(--geist-accent-4);
+  box-shadow: var(--geist-shadow-small);
+  text-decoration: none;
+}
+
+.thank-you {
+  margin-top: 32px;
+  font-style: italic;
+  color: var(--geist-accent-5);
+}
+
+/* Тема */
+.theme-toggle-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (min-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .skills-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .info-links {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Стили для градиентных кругов в светлой теме */
+:root.light-theme .gradient-circle.red {
+  background-color: rgba(233, 63, 63, 0.43);
+}
+
+:root.light-theme .gradient-circle.blue {
+  background-color: rgba(63, 100, 233, 0.43);
+}
+
+:root.light-theme .gradient-circle.yellow {
+  background-color: rgba(255, 184, 0, 0.43);
+}
+
+/* Стили для страницы проекта */
+.project-details-container {
+  padding: 16px 0;
+}
+
+.project-details-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  color: var(--geist-foreground);
+  cursor: pointer;
+  padding: 8px 0;
+  margin-right: 16px;
+}
+
+.project-details-image-container {
+  width: 100%;
+  height: 240px;
+  border-radius: var(--geist-radius);
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.project-details-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-details-card {
+  padding: 24px;
+}
+
+.project-full-description {
+  margin: 24px 0;
+}
+
+.project-full-description h2 {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+  margin-top: 32px;
+}
+
+.project-full-description h3 {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+  margin-top: 24px;
+}
+
+.project-full-description p {
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.project-full-description li {
+  margin-bottom: 8px;
+  margin-left: 20px;
+}
+
+.project-details-actions {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Делаем карточки проектов кликабельными */
+.project-card {
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--geist-shadow-medium);
+}
+
+.services-list {
+  text-align: left;
+  margin: 16px 0;
+  padding-left: 20px;
+}
+
+.services-list li {
+  margin-bottom: 8px;
+  color: var(--geist-foreground);
+}
+
+/* Стили для HTML-описания проекта */
+.project-description {
+  text-align: left;
+  padding: 0 8px;
+}
+
+.project-section-title {
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+  color: var(--geist-foreground);
+  border-bottom: 1px solid var(--geist-accent-2);
+  padding-bottom: 8px;
+}
+
+.project-subsection-title {
+  font-size: 1.4rem;
+  margin-top: 24px;
+  margin-bottom: 12px;
+  color: var(--geist-foreground);
+}
+
+.project-text {
+  margin-bottom: 16px;
+  line-height: 1.6;
+  color: var(--geist-foreground);
+}
+
+.project-list {
+  margin: 0;
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+.project-list-item {
+  margin-bottom: 8px;
+  line-height: 1.5;
+  color: var(--geist-foreground);
+}

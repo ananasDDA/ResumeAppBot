@@ -1,0 +1,133 @@
+:root {
+  /* Переменные цвета в стиле Geist UI */
+  --geist-foreground: #000;
+  --geist-background: #fff;
+  --geist-selection: #79ffe1;
+  --geist-secondary: #666;
+  --geist-accent-1: #fafafa;
+  --geist-accent-2: #eaeaea;
+  --geist-accent-3: #999;
+  --geist-accent-4: #888;
+  --geist-accent-5: #666;
+  --geist-accent-6: #444;
+  --geist-accent-7: #333;
+  --geist-accent-8: #111;
+  --geist-success: #0070f3;
+  --geist-error: #e00;
+  --geist-warning: #f5a623;
+  --geist-violet: #7928ca;
+  --geist-cyan: #50e3c2;
+  --geist-highlight-purple: #f81ce5;
+  --geist-highlight-magenta: #eb367f;
+  --geist-highlight-pink: #ff0080;
+  --geist-radius: 5px;
+  --geist-shadow-small: 0 5px 10px rgba(0, 0, 0, 0.12);
+  --geist-shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.12);
+  --geist-shadow-large: 0 30px 60px rgba(0, 0, 0, 0.12);
+
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: var(--geist-foreground);
+  background-color: var(--geist-background);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Светлая тема на основе Figma дизайна */
+:root.light-theme {
+  --geist-foreground: #000;
+  --geist-background: #f8f8f8;
+  --geist-selection: #79ffe1;
+  --geist-secondary: #666;
+  --geist-accent-1: #fafafa;
+  --geist-accent-2: #eaeaea;
+  --geist-accent-3: #999;
+  --geist-accent-4: #888;
+  --geist-accent-5: #666;
+  --geist-accent-6: #444;
+  --geist-accent-7: #333;
+  --geist-accent-8: #111;
+  --geist-success: #0070f3;
+  --geist-error: #e00;
+  --geist-warning: #f5a623;
+  --geist-violet: #7928ca;
+  --geist-violet-light: #8a63d2;
+  --geist-violet-dark: #4c2889;
+  --geist-cyan: #50e3c2;
+  --geist-cyan-light: #79ffe1;
+  --geist-cyan-dark: #29bc9b;
+  --geist-highlight-purple: #f81ce5;
+  --geist-highlight-magenta: #eb367f;
+  --geist-highlight-pink: #ff0080;
+  --geist-highlight-yellow: #fff500;
+  --geist-code: #f81ce5;
+  --geist-border-radius: 5px;
+  --geist-shadow-small: 0 5px 10px rgba(0, 0, 0, 0.12);
+  --geist-shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.12);
+  --geist-shadow-large: 0 30px 60px rgba(0, 0, 0, 0.12);
+  --geist-shadow-hover: 0 30px 60px rgba(0, 0, 0, 0.12);
+  --geist-shadow-sticky: 0 12px 10px -10px rgba(0, 0, 0, 0.12);
+  --geist-marketing-gray: #fafbfc;
+  --geist-radius: 5px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.25;
+  color: var(--geist-foreground);
+  font-weight: 600;
+}
+
+p {
+  color: var(--geist-secondary);
+}
+
+a {
+  font-weight: 500;
+  color: var(--geist-success);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* Медиа-запросы для темной темы */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --geist-foreground: #fff;
+    --geist-background: #000;
+    --geist-accent-1: #111;
+    --geist-accent-2: #333;
+    --geist-accent-3: #444;
+    --geist-accent-4: #666;
+    --geist-accent-5: #888;
+    --geist-accent-6: #999;
+    --geist-accent-7: #eaeaea;
+    --geist-accent-8: #fafafa;
+    --geist-success: #0070f3;
+  }
+}

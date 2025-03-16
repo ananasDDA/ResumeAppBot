@@ -1,0 +1,15 @@
+.geist-card {
+  background-color: var(--geist-background);
+  border-radius: var(--geist-radius);
+  padding: 20px;
+  border: 1px solid var(--geist-accent-2);
+  transition: all 0.2s;
+}
+
+.geist-card.with-shadow {
+  box-shadow: var(--geist-shadow-small);
+}
+
+.geist-card:hover.with-shadow {
+  box-shadow: var(--geist-shadow-medium);
+}

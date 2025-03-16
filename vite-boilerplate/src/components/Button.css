@@ -1,0 +1,68 @@
+.geist-button {
+  border-radius: var(--geist-radius);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Inter', sans-serif;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+}
+
+.geist-button.primary {
+  background: var(--geist-success);
+  color: white;
+}
+
+.geist-button.secondary {
+  background: transparent;
+  color: var(--geist-foreground);
+  border: 1px solid var(--geist-accent-2);
+}
+
+.geist-button.ghost {
+  background: transparent;
+  color: var(--geist-foreground);
+}
+
+.geist-button.small {
+  padding: 0 12px;
+  height: 32px;
+  font-size: 14px;
+}
+
+.geist-button.medium {
+  padding: 0 16px;
+  height: 40px;
+  font-size: 14px;
+}
+
+.geist-button.large {
+  padding: 0 24px;
+  height: 48px;
+  font-size: 16px;
+}
+
+.geist-button:hover {
+  box-shadow: var(--geist-shadow-small);
+}
+
+.geist-button.primary:hover {
+  background: var(--geist-success);
+  opacity: 0.9;
+}
+
+.geist-button.secondary:hover {
+  border-color: var(--geist-accent-4);
+}
+
+.geist-button.ghost:hover {
+  background: var(--geist-accent-1);
+}
+
+.geist-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}

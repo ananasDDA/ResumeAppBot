@@ -1,0 +1,148 @@
+\documentclass[a4paper,11pt]{article}
+
+% Пакеты
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[russian]{babel}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{fontawesome5}
+\usepackage{titlesec}
+\usepackage{xcolor}
+
+% Настройка страницы
+\geometry{
+  a4paper,
+  left=2cm,
+  right=2cm,
+  top=2cm,
+  bottom=2cm
+}
+
+% Убираем номера страниц
+\pagestyle{empty}
+
+% Настройка заголовков
+\titleformat{\section}
+  {\Large\bfseries}
+  {}{0em}
+  {}
+  [\titlerule]
+
+\titlespacing{\section}
+  {0pt}
+  {12pt}
+  {8pt}
+
+% Настройка гиперссылок
+\hypersetup{
+  colorlinks=true,
+  urlcolor=blue
+}
+
+% Начало документа
+\begin{document}
+
+% Заголовок резюме
+\begin{center}
+  {\Huge\textbf{Даниил Дорохов}}\\[0.3cm]
+  \faEnvelope\ Telegram: \href{https://t.me/yourusername}{@yourusername} \quad
+  \faGithub\ GitHub: \href{https://github.com/yourusername}{github.com/yourusername}
+\end{center}
+
+% Профессиональный профиль
+\section{Профессиональный профиль}
+Full stack developer с практическим опытом разработки веб-приложений и Telegram-решений,
+а также обширным background в сфере manual и automated testing [3 года]. Специализируюсь на
+создании и интеграции кросс-платформенных решений с использованием современных техноло-
+гий. Мой опыт в тестировании на различных платформах (Desktop, Mobile,
+Web) обеспечивает уникальный подход к разработке качественных и отказоустойчивых реше-
+ний. Активно развиваюсь в направлении full stack разработки, с особым интересом к созданию
+Telegram-приложений и ботов.
+
+% Образование
+\section{Образование}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Российский экономический университет имени Г.В. Плеханова}, Москва \hfill 2023 -- н.в.\\
+  Бакалавриат, направление "Бизнес-информатика"\\
+  2 курс
+
+\end{itemize}
+
+% Опыт работы
+\section{Опыт работы}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{QA-инженер}, ООО "Avroid" \hfill 12.03.2024 -- н.в.
+  \begin{itemize}
+    \item Разработка и интеграция Telegram-решений для автоматизации рабочих процессов
+    \item Проведение тестирования API с использованием Postman и разработка документации для API
+    \item Создание и поддержка коллекции автотестов в Postman
+    \item Автоматизация тестирования на уровне API с использованием Python и библиотеки requests
+    \item Развертывание тестовых сред с использованием Docker и Aurora SDK
+  \end{itemize}
+
+  \item \textbf{QA-инженер}, ООО "Новые Облачные Технологии" ("МойОфис") \hfill 10.01.2023 -- 11.03.2024
+  \begin{itemize}
+    \item Стал самым молодым сотрудником компании
+    \item Участие в разработке тестовой документации (тест-кейсы, чек-листы, отчеты о дефектах)
+    \item Создание и поддержка автоматизированных тестов для web-приложений с использованием Python и Selenium WebDriver
+    \item Проведение тестирования API с использованием Postman и разработка документации для API
+    \item Создание документации для тестирования безопасности и проведение тестирования на уровне API
+    \item Развертывание тестовых сред с использованием Docker и Kubernetes
+  \end{itemize}
+
+  \item \textbf{Стажер}, ООО "Новые Облачные Технологии" ("МойОфис") \hfill 1.08.2022 -- 1.09.2023
+  \begin{itemize}
+    \item Освоение методологий тестирования и лучших практик обеспечения качества ПО
+    \item Участие в тестировании производительности офисных приложений
+    \item Получил лучший результат на тестовом задании среди всех кандидатов
+  \end{itemize}
+\end{itemize}
+
+% Навыки
+\section{Навыки}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Технические навыки:} Ручное и автоматизированное тестирование,
+   разработка веб-приложений, создание Telegram-ботов и WebApp,
+   Парсинг данных,
+   настройка и поддержка CI/CD, разработка и интеграция API,
+   развертывание и конфигурация приложений,
+   настройка серверов и облачных сервисов,
+   настройка VPN серверов и прокси
+
+  \item \textbf{Языки программирования:} Python, C++, GO, SQL, JavaScript/TypeScript, HTML/CSS, bash (C, Assembly, Swift)
+
+  \item \textbf{Инструменты и технологии:} React, Node.js, Telegram Bot API, Selenium WebDriver, Postman, Docker, Kubernetes, GitLab, Jenkins, Git, Jira, Linux, Windows, MacOS
+
+  \item \textbf{Языки:} Русский (родной), Английский
+\end{itemize}
+
+% Проекты
+% \section{Проекты}
+% \begin{itemize}[leftmargin=*]
+%   \item \textbf{[Название проекта]} \hfill [Год]\\
+%   [Краткое описание проекта]\\
+%   \textit{Технологии:} [Используемые технологии]
+
+%   \item \textbf{[Название проекта]} \hfill [Год]\\
+%   [Краткое описание проекта]\\
+%   \textit{Технологии:} [Используемые технологии]
+% \end{itemize}
+
+% % Сертификаты
+% \section{Сертификаты}
+% \begin{itemize}[leftmargin=*]
+%   \item \textbf{[Название сертификата]}, [Организация] \hfill [Год]
+%   \item \textbf{[Название сертификата]}, [Организация] \hfill [Год]
+% \end{itemize}
+
+% % Дополнительная информация
+% \section{Дополнительная информация}
+% \begin{itemize}[leftmargin=*]
+%   \item \textbf{Интересы:} [Ваши интересы]
+%   \item \textbf{Волонтерство:} [Ваш опыт волонтерства]
+% \end{itemize}
+
+\end{document}

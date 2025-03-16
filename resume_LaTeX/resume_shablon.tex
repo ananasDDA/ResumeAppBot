@@ -1,0 +1,126 @@
+\documentclass[a4paper,11pt]{article}
+
+% Пакеты
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[russian]{babel}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{fontawesome}
+\usepackage{titlesec}
+\usepackage{xcolor}
+
+% Настройка страницы
+\geometry{
+  a4paper,
+  left=2cm,
+  right=2cm,
+  top=2cm,
+  bottom=2cm
+}
+
+% Убираем номера страниц
+\pagestyle{empty}
+
+% Настройка заголовков
+\titleformat{\section}
+  {\Large\bfseries}
+  {}{0em}
+  {}
+  [\titlerule]
+
+\titlespacing{\section}
+  {0pt}
+  {12pt}
+  {8pt}
+
+% Настройка гиперссылок
+\hypersetup{
+  colorlinks=true,
+  urlcolor=blue
+}
+
+% Начало документа
+\begin{document}
+
+% Заголовок резюме
+\begin{center}
+  {\Huge\textbf{Иван Иванов}}\\[0.3cm]
+  \faPhone\ +7 (999) 123-45-67 \quad
+  \faEnvelope\ \href{mailto:ivan.ivanov@example.com}{ivan.ivanov@example.com} \quad
+  \faLinkedin\ \href{https://linkedin.com/in/ivanivanov}{linkedin.com/in/ivanivanov} \quad
+  \faGithub\ \href{https://github.com/ivanivanov}{github.com/ivanivanov}
+\end{center}
+
+% Профессиональный профиль
+\section{Профессиональный профиль}
+Опытный специалист в области [ваша область] с [X лет] опыта работы. Обладаю навыками [ключевые навыки]. Нацелен на [ваши цели].
+
+% Образование
+\section{Образование}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Название университета}, Город \hfill 2015 -- 2019\\
+  Степень бакалавра в области [ваша специальность]\\
+  Средний балл: X.X/5.0
+
+  \item \textbf{Название университета}, Город \hfill 2019 -- 2021\\
+  Степень магистра в области [ваша специальность]\\
+  Средний балл: X.X/5.0
+\end{itemize}
+
+% Опыт работы
+\section{Опыт работы}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{[Должность]}, [Название компании], [Город] \hfill [Месяц Год] -- [Месяц Год]
+  \begin{itemize}
+    \item Достижение 1
+    \item Достижение 2
+    \item Достижение 3
+  \end{itemize}
+
+  \item \textbf{[Должность]}, [Название компании], [Город] \hfill [Месяц Год] -- [Месяц Год]
+  \begin{itemize}
+    \item Достижение 1
+    \item Достижение 2
+    \item Достижение 3
+  \end{itemize}
+\end{itemize}
+
+% Навыки
+\section{Навыки}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Технические навыки:} [Перечислите ваши технические навыки]
+  \item \textbf{Языки программирования:} [Перечислите языки программирования]
+  \item \textbf{Инструменты и технологии:} [Перечислите инструменты и технологии]
+  \item \textbf{Языки:} Русский (родной), Английский (уровень)
+\end{itemize}
+
+% Проекты
+\section{Проекты}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{[Название проекта]} \hfill [Год]\\
+  [Краткое описание проекта]\\
+  \textit{Технологии:} [Используемые технологии]
+
+  \item \textbf{[Название проекта]} \hfill [Год]\\
+  [Краткое описание проекта]\\
+  \textit{Технологии:} [Используемые технологии]
+\end{itemize}
+
+% Сертификаты
+\section{Сертификаты}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{[Название сертификата]}, [Организация] \hfill [Год]
+  \item \textbf{[Название сертификата]}, [Организация] \hfill [Год]
+\end{itemize}
+
+% Дополнительная информация
+\section{Дополнительная информация}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Интересы:} [Ваши интересы]
+  \item \textbf{Волонтерство:} [Ваш опыт волонтерства]
+\end{itemize}
+
+\end{document}
