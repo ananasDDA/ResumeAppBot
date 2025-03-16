@@ -101,7 +101,7 @@ function App() {
       id: 1,
       title: 'Snowboard Booking WebApp + Bot',
       description: 'Система бронирования сноубордов через Telegram Bot',
-      imageUrl: '/project1.png',
+      imageUrl: './project1.png',
       technologies: ['Vite', 'React', 'TypeScript', 'Python'],
       link: 'https://example.com/project1',
       screenshots: [
@@ -140,11 +140,11 @@ function App() {
       ],
       fullDescription: `
         <div style="position: relative; margin-bottom: 30px; text-align: left;">
-          <div style="position: relative; width: 100%; height: 300px; background-image: url('/screenshots/project1/ipadAPP.jpg'); background-size: cover; background-position: center; border-radius: 8px; opacity: 0.3;">
+          <div style="position: relative; width: 100%; height: 300px; background-image: url('./screenshots/project1/ipadAPP.jpg'); background-size: cover; background-position: center; border-radius: 8px; opacity: 0.3;">
           </div>
           <div style="position: absolute; top: 50%; right: 30px; transform: translateY(-50%); width: 180px; height: 360px; background-color: #111; border-radius: 36px; padding: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); border: 1px solid #333;">
             <div style="width: 100%; height: 100%; border-radius: 28px; overflow: hidden; position: relative;">
-              <img src="/screenshots/project1/start.jpg" alt="Стартовый экран бота" style="width: 100%; height: 100%; object-fit: cover;">
+              <img src="./screenshots/project1/start.jpg" alt="Стартовый экран бота" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
           </div>
         </div>
@@ -278,7 +278,7 @@ function App() {
 
         <div style="margin: 30px 0; text-align: center;">
           <h4 style="text-align: left; margin-bottom: 15px;">Схема потока данных</h4>
-          <img src="/screenshots/project1/data_flow.jpg" alt="Схема потока данных" style="max-width: 100%; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);"
+          <img src="./screenshots/project1/data_flow.jpg" alt="Схема потока данных" style="max-width: 100%; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);"
         </div>
       `
     },
@@ -286,7 +286,7 @@ function App() {
       id: 2,
       title: 'Проект 2',
       description: 'Веб-инструмент для генерации ASCII-деревьев директорий из любой папки на вашем компьютере.',
-      imageUrl: '/project2.png',
+      imageUrl: './project2.png',
       technologies: ['Vue', 'JavaScript', 'Node.js'],
       link: 'https://example.com/project2',
       fullDescription: `
@@ -314,7 +314,7 @@ function App() {
       id: 3,
       title: 'Проект 3',
       description: 'Участие в переводе документации React на русский язык, работа с опытными разработчиками.',
-      imageUrl: '/project3.jpg',
+      imageUrl: './project3.jpg',
       technologies: ['React', 'Documentation', 'Open Source'],
       link: 'https://example.com/project3',
       fullDescription: `

@@ -17,7 +17,8 @@ export default defineConfig({
   ],
   build: {
     outDir: './docs',
-    sourcemap: true
+    sourcemap: true,
+    assetsInlineLimit: 0
   },
   base: '/ResumeAppBot/',
   resolve: {
