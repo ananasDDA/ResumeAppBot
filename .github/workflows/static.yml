@@ -29,27 +29,20 @@ jobs:
         with:
           node-version: "18"
           cache: 'npm'
-          cache-dependency-path: './vite-boilerplate/package-lock.json'
+          cache-dependency-path: './package-lock.json'
 
       - name: Install dependencies
-        run: |
-          cd vite-boilerplate
-          npm ci
+        run: npm ci
 
       - name: Build
-        run: |
-          cd vite-boilerplate
-          npm run build
+        run: npm run build
 
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
 
       - name: Upload artifact
-        run: |
-          # Создаём артефакт вручную
-          cd vite-boilerplate
-          tar -cvf ../artifact.tar docs
+        run: tar -cvf artifact.tar docs
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
