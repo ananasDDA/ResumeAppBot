@@ -11,7 +11,7 @@ on:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -22,11 +22,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Single deploy job since we're just deploying
-  build:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -43,58 +39,10 @@ jobs:
           npm ci
           npm install react-icons prop-types --save
 
-      - name: Modify vite.config.ts for GitHub Pages
-        run: |
-          # Create or update vite.config.ts to use the correct base path for GitHub Pages
-          if [ -f "vite.config.ts" ]; then
-            echo "Modifying existing vite.config.ts"
-            sed -i 's/base: .*/base: "\/.\/",/g' vite.config.ts
-            # If no base property exists, add it
-            if ! grep -q "base:" vite.config.ts; then
-              sed -i '/defineConfig/a \  base: "\/",\n' vite.config.ts
-            fi
-            cat vite.config.ts
-          else
-            echo "Creating new vite.config.ts"
-            echo 'import { defineConfig } from "vite";
-            import react from "@vitejs/plugin-react";
-
-            export default defineConfig({
-              base: "/",
-              plugins: [react()],
-            });' > vite.config.ts
-          fi
-
       - name: Build
         run: npm run build
 
-      - name: Find build directory
-        id: find-build
-        run: |
-          if [ -d "dist" ]; then
-            echo "build_dir=dist" >> $GITHUB_OUTPUT
-            echo "Found dist directory"
-          elif [ -d "build" ]; then
-            echo "build_dir=build" >> $GITHUB_OUTPUT
-            echo "Found build directory"
-          elif [ -d "docs" ]; then
-            echo "build_dir=docs" >> $GITHUB_OUTPUT
-            echo "Found docs directory"
-          else
-            echo "No standard build directory found, listing all directories:"
-            find . -type d -maxdepth 2
-            echo "build_dir=." >> $GITHUB_OUTPUT
-            echo "Using current directory as fallback"
-          fi
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          path: './docs'
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          folder: docs
