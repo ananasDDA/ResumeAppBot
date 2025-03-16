@@ -284,8 +284,8 @@ function App() {
     },
     {
       id: 2,
-      title: 'Проект 2',
-      description: 'Веб-инструмент для генерации ASCII-деревьев директорий из любой папки на вашем компьютере.',
+      title: 'Resume WebApp + Bot',
+      description: '',
       imageUrl: './project2.png',
       technologies: ['Vue', 'JavaScript', 'Node.js'],
       link: 'https://example.com/project2',
