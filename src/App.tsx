@@ -106,35 +106,35 @@ function App() {
       link: 'https://example.com/project1',
       screenshots: [
         {
-          src: '/screenshots/project1/start.jpg',
+          src: './screenshots/project1/start.jpg',
           caption: 'Стартовый экран бота'
         },
         {
-          src: '/screenshots/project1/phone_number.jpg',
+          src: './screenshots/project1/phone_number.jpg',
           caption: 'регистарация пользователя с помощью номера телефона'
         },
         {
-          src: '/screenshots/project1/admin_keyboard.jpg',
+          src: './screenshots/project1/admin_keyboard.jpg',
           caption: 'Команды доступные администратору'
         },
         {
-          src: '/screenshots/project1/user_keyboard.jpg',
+          src: './screenshots/project1/user_keyboard.jpg',
           caption: 'Команды доступные пользователю'
         },
         {
-          src: '/screenshots/project1/iphoneAPP.jpg',
+          src: './screenshots/project1/iphoneAPP.jpg',
           caption: 'Выбор модели сноуборда в веб-приложении'
         },
         {
-          src: '/screenshots/project1/boardsettings.jpg',
+          src: './screenshots/project1/boardsettings.jpg',
           caption: 'Настройки сноуборда и выбор периуда аренды'
         },
         {
-          src: '/screenshots/project1/calendar.jpg',
+          src: './screenshots/project1/calendar.jpg',
           caption: 'Выбор даты и времени аренды'
         },
         {
-          src: '/screenshots/project1/successful_booking.jpg',
+          src: './screenshots/project1/successful_booking.jpg',
           caption: 'Подтверждение бронирования сноуборда с деталями и геолокацией'
         },
       ],
@@ -581,7 +581,6 @@ function App() {
 
   return (
     <div className="app-container">
-      {isTelegramWebApp() && <div className="telegram-badge">Running in Telegram</div>}
       <div className="gradient-background">
         {/* Градиентный фон в стиле Geist UI */}
         <div className="gradient-circle red"></div>
