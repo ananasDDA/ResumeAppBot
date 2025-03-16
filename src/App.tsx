@@ -428,7 +428,7 @@ function App() {
         <div className="project-details-header">
           <button className="back-button" onClick={goBack}>
             <FiArrowLeft size={20} />
-            <span>Назад</span>
+            {/* <span>Назад</span> */}
           </button>
           <h2>{selectedProject.title}</h2>
         </div>
