@@ -296,11 +296,11 @@ function App() {
         }
       ],
       fullDescription: `
-        <div style="position: relative; margin-bottom: 30px; text-align: left;">
-          <div style="position: relative; width: 100%; height: 300px; background-image: url('./screenshots/project2/webapp_desktop.jpg'); background-size: cover; background-position: center; border-radius: 8px; opacity: 0.3;">
+        <div style="position: relative; margin: 50px 0; text-align: center;">
+          <div style="position: relative; width: 100%; height: 350px; background-image: url('./screenshots/project2/webapp_desktop.jpg'); background-size: cover; background-position: center; border-radius: 12px; opacity: 0.3;">
           </div>
-          <div style="position: absolute; top: 50%; right: 30px; transform: translateY(-50%); width: 180px; height: 360px; background-color: #111; border-radius: 36px; padding: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); border: 1px solid #333;">
-            <div style="width: 100%; height: 100%; border-radius: 28px; overflow: hidden; position: relative;">
+          <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 220px; height: 440px; background-color: #111; border-radius: 40px; padding: 12px; box-shadow: 0 15px 30px rgba(0,0,0,0.4); border: 1px solid #333; overflow: hidden;">
+            <div style="width: 100%; height: 100%; border-radius: 30px; overflow: hidden; position: relative;">
               <img src="./screenshots/project2/start.jpg" alt="Стартовый экран бота" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
           </div>
