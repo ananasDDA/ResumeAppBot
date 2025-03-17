@@ -139,7 +139,7 @@ function App() {
         },
       ],
       fullDescription: `
-        <div style="position: relative; margin-bottom: 30px; text-align: left;">
+        <div style="position: relative; margin: 50px 0 30px; text-align: left;">
           <div style="position: relative; width: 100%; height: 300px; background-image: url('./screenshots/project1/ipadAPP.jpg'); background-size: cover; background-position: center; border-radius: 8px; opacity: 0.3;">
           </div>
           <div style="position: absolute; top: 50%; right: 30px; transform: translateY(-50%); width: 180px; height: 360px; background-color: #111; border-radius: 36px; padding: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); border: 1px solid #333;">
@@ -289,12 +289,12 @@ function App() {
       imageUrl: './project2.png',
       technologies: ['React', 'TypeScript', 'Vite', 'Python'],
       link: 'https://github.com/ananasDDA/ResumeAppBot',
-      screenshots: [
-        {
-          src: './screenshots/project2/start.jpg',
-          caption: 'Стартовый экран бота'
-        }
-      ],
+      // screenshots: [
+      //   {
+      //     src: './screenshots/project2/start.jpg',
+      //     caption: 'Стартовый экран бота'
+      //   }
+      // ],
       fullDescription: `
         <div style="position: relative; margin: 50px 0; text-align: center;">
           <div style="position: relative; width: 100%; height: 350px; background-image: url('./screenshots/project2/webapp_desktop.jpg'); background-size: cover; background-position: center; border-radius: 12px; opacity: 0.3;">
@@ -466,30 +466,17 @@ ResumeAppBot/
     },
     {
       id: 3,
-      title: 'Проект 3',
-      description: 'Участие в переводе документации React на русский язык, работа с опытными разработчиками.',
-      imageUrl: './project3.jpg',
-      technologies: ['React', 'Documentation', 'Open Source'],
-      link: 'https://example.com/project3',
+      title: 'InProgress',
+      description: 'Проект на стадии разработки',
+      imageUrl: './screenshots/project3/inprogress.jpg',
+      technologies: ['????', '????', '????'],
+      link: '#',
       fullDescription: `
-        ## Подробное описание проекта 3
+        <div style="position: relative; margin: 50px 0 30px; text-align: center;">
+          <img src="./screenshots/project3/inprogress.jpg" alt="Проект в разработке" style="max-width: 100%; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+        </div>
 
-        Я активно участвовал в переводе официальной документации React на русский язык,
-        что помогло сделать эту технологию более доступной для русскоязычных разработчиков.
-
-        ### Мой вклад:
-
-        - Перевод разделов о хуках и контексте
-        - Проверка и редактирование переводов других участников
-        - Синхронизация с обновлениями оригинальной документации
-        - Участие в обсуждениях терминологии
-
-        ### Результаты:
-
-        - Улучшение доступности React для русскоязычного сообщества
-        - Развитие навыков технического перевода
-        - Углубление понимания React и его экосистемы
-        - Опыт работы в распределенной команде
+        <h2 style="text-align: center; margin-top: 30px;">🚧 Над проектом ведутся работы 🚧</h2>
       `
     }
   ];
