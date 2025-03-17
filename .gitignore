@@ -62,3 +62,6 @@ Bot/.env
 
 # Build output
 docs/
+
+Bot/.git
+Bot/amvera.yml

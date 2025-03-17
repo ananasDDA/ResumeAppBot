@@ -13,6 +13,9 @@ PORTFOLIO_URL = os.getenv('PORTFOLIO_URL')
 # URL веб-приложения портфолио
 PORTFOLIO_WEB_APP_URL = os.getenv('PORTFOLIO_WEB_APP_URL')
 
+# ID администратора бота
+ADMIN_ID = os.getenv('ADMIN_ID')
+
 # Данные для резюме
 RESUME = {
     "name": "Даня",

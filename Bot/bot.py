@@ -1,7 +1,9 @@
 import logging
 import telebot
 import os
-from config import BOT_TOKEN, RESUME, PORTFOLIO_URL, PORTFOLIO_WEB_APP_URL
+import platform
+import datetime
+from config import BOT_TOKEN, RESUME, PORTFOLIO_URL, PORTFOLIO_WEB_APP_URL, ADMIN_ID
 
 # Настройка логирования
 logging.basicConfig(
@@ -51,6 +53,33 @@ def get_contact_keyboard():
 def start_command(message):
     """Обработчик команды /start"""
     user_name = message.from_user.first_name
+    user_id = message.from_user.id
+    username = message.from_user.username or "Нет username"
+
+    # Отправляем уведомление администратору о новом пользователе
+    if ADMIN_ID:
+        try:
+            current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+            # Формируем сообщение для администратора
+            admin_message = (
+                f"🔔 <b>Новый пользователь запустил бота!</b>\n\n"
+                f"👤 <b>Имя:</b> {user_name}\n"
+                f"🆔 <b>ID:</b> {user_id}\n"
+                f"📝 <b>Username:</b> @{username}\n"
+                f"⏰ <b>Время:</b> {current_time}"
+            )
+
+            # Отправляем сообщение администратору
+            bot.send_message(
+                int(ADMIN_ID),
+                admin_message,
+                parse_mode="HTML"
+            )
+            logger.info(f"Уведомление о новом пользователе отправлено администратору (пользователь: {user_name}, ID: {user_id})")
+        except Exception as e:
+            logger.error(f"Не удалось отправить уведомление администратору о новом пользователе: {e}")
+
     greeting = (
         f"Привет, {user_name}! 👋\n\n"
         f"Я {RESUME['name']}, {RESUME['position']}.\n"
@@ -181,6 +210,34 @@ def text_message_handler(message):
 if __name__ == '__main__':
     try:
         logger.info("Запуск бота...")
+
+        # Отправляем уведомление администратору о запуске бота
+        if ADMIN_ID:
+            try:
+                # Получаем информацию о системе
+                system_info = platform.uname()
+                current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+                # Формируем сообщение
+                startup_message = (
+                    f"🤖 <b>Бот запущен!</b>\n\n"
+                    f"⏰ <b>Время запуска:</b> {current_time}\n"
+                    f"💻 <b>Система:</b> {system_info.system} {system_info.release}\n"
+                    f"🖥️ <b>Хост:</b> {system_info.node}\n"
+                    f"🔄 <b>Версия Python:</b> {platform.python_version()}\n\n"
+                    f"Бот готов к работе и ожидает сообщений от пользователей."
+                )
+
+                # Отправляем сообщение администратору
+                bot.send_message(
+                    int(ADMIN_ID),  # Преобразуем строку в число
+                    startup_message,
+                    parse_mode="HTML"
+                )
+                logger.info(f"Уведомление о запуске отправлено администратору (ID: {ADMIN_ID})")
+            except Exception as e:
+                logger.error(f"Не удалось отправить уведомление администратору: {e}")
+
         bot.polling(none_stop=True)
     except Exception as e:
         logger.error(f"Критическая ошибка: {e}")

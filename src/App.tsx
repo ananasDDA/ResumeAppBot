@@ -284,30 +284,184 @@ function App() {
     },
     {
       id: 2,
-      title: 'Resume WebApp + Bot',
-      description: '',
+      title: 'ResumeAppBot',
+      description: 'Интерактивное портфолио в Telegram Mini Apps',
       imageUrl: './project2.png',
-      technologies: ['Vue', 'JavaScript', 'Node.js'],
-      link: 'https://example.com/project2',
+      technologies: ['React', 'TypeScript', 'Vite', 'Python'],
+      link: 'https://t.me/the_best_resume_bot',
+      screenshots: [
+        {
+          src: './screenshots/project2/start.jpg',
+          caption: 'Стартовый экран бота'
+        }
+      ],
       fullDescription: `
-        ## Подробное описание проекта 2
+        <div style="position: relative; margin-bottom: 30px; text-align: left;">
+          <div style="position: relative; width: 100%; height: 300px; background-image: url('./screenshots/project2/webapp_desktop.jpg'); background-size: cover; background-position: center; border-radius: 8px; opacity: 0.3;">
+          </div>
+          <div style="position: absolute; top: 50%; right: 30px; transform: translateY(-50%); width: 180px; height: 360px; background-color: #111; border-radius: 36px; padding: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); border: 1px solid #333;">
+            <div style="width: 100%; height: 100%; border-radius: 28px; overflow: hidden; position: relative;">
+              <img src="./screenshots/project2/start.jpg" alt="Стартовый экран бота" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+          </div>
+        </div>
 
-        Этот веб-инструмент позволяет пользователям генерировать ASCII-представление структуры директорий,
-        что особенно полезно для документации проектов и README файлов.
+        <h2 style="text-align: left;">ResumeAppBot - Интерактивное портфолио в Telegram Mini Apps</h2>
 
-        ### Ключевые функции:
+        <p style="text-align: left;">
+          <a href="https://t.me/the_best_resume_bot" style="display: inline-block; margin-top: 10px; margin-bottom: 20px; padding: 8px 16px; background-color: #2481cc; color: white; text-decoration: none; border-radius: 6px; font-weight: bold;">
+            👉 Открыть в Telegram
+          </a>
+          - Посмотрите приложение в действии
+        </p>
 
-        - Загрузка структуры папок через drag-and-drop
-        - Настраиваемые параметры отображения
-        - Экспорт в различные форматы
-        - Интеграция с GitHub
+        <h3 style="text-align: left;">✨ Основные возможности</h3>
+        <ul style="text-align: left; padding-left: 20px;">
+          <li><strong>Адаптивный интерфейс</strong> с автоматической настройкой под тему Telegram</li>
+          <li><strong>Интерактивные карточки проектов</strong> с подробным описанием</li>
+          <li><strong>Галерея скриншотов</strong> с поддержкой подписей и мобильного превью</li>
+          <li><strong>Секции навыков</strong> с группировкой по категориям</li>
+          <li><strong>Интеграция с Telegram Web App API</strong> для плавного пользовательского опыта</li>
+          <li><strong>Автоматический деплой</strong> через GitHub Actions</li>
+        </ul>
 
-        ### Технический стек:
+        <h3 style="text-align: left;">🤖 Telegram Bot</h3>
+        <p style="text-align: left;">Проект включает полноценного Telegram бота, который служит интерфейсом для доступа к портфолио и обеспечивает дополнительные функции:</p>
+        <ul style="text-align: left; padding-left: 20px;">
+          <li><strong>Команда /start</strong> - Приветствие и основное меню с доступом к портфолио</li>
+          <li><strong>Интерактивные кнопки</strong> - Навигация по разделам портфолио</li>
+          <li><strong>Интеграция с Mini App</strong> - Запуск веб-приложения портфолио внутри Telegram</li>
+        </ul>
 
-        - Vue.js для фронтенда
-        - Node.js для серверной части
-        - Express для API
-        - WebSockets для обновления в реальном времени
+        <h4 style="text-align: left;">Система уведомлений для администратора</h4>
+        <p style="text-align: left;">Бот включает систему уведомлений для администратора, которая обеспечивает:</p>
+
+        <div style="background-color: #1e1e1e; border-radius: 8px; padding: 15px; margin: 15px 0; font-family: monospace; font-size: 14px; color: #d4d4d4; text-align: left;">
+          🤖 Бот запущен!<br><br>
+          ⏰ Время запуска: 2025-03-16 23:59:57<br>
+          💻 Система: Linux 5.4.0-196-generic<br>
+          🖥️ Хост: host<br>
+          🔄 Версия Python: 3.11.11<br><br>
+          Бот готов к работе и ожидает сообщений от пользователей.
+        </div>
+
+        <p style="text-align: left;">Уведомления о новых пользователях, взаимодействующих с ботом:</p>
+
+        <div style="background-color: #1e1e1e; border-radius: 8px; padding: 15px; margin: 15px 0; font-family: monospace; font-size: 14px; color: #d4d4d4; text-align: left;">
+          🔔 Новый пользователь запустил бота!<br><br>
+          👤 Имя: name<br>
+          🆔 ID: 1234567890<br>
+          📝 Username: @username<br>
+          ⏰ Время: 2025-03-17 02:46:43
+        </div>
+
+        <h3 style="text-align: left;">🛠️ Технологии</h3>
+        <ul style="text-align: left; padding-left: 20px;">
+          <li><strong>Frontend</strong>: React, TypeScript, Vite</li>
+          <li><strong>Стилизация</strong>: CSS с переменными для поддержки тем</li>
+          <li><strong>Иконки</strong>: React-icons, Feather-icons</li>
+          <li><strong>Telegram</strong>: Telegram Mini Apps API (@twa-dev/sdk)</li>
+          <li><strong>Деплой</strong>: GitHub Actions, GitHub Pages</li>
+        </ul>
+
+        <h3 style="text-align: left;">🚀 Установка и запуск</h3>
+
+        <h4 style="text-align: left;">Предварительные требования</h4>
+        <ul style="text-align: left; padding-left: 20px;">
+          <li>Node.js 18 или выше</li>
+          <li>npm или yarn</li>
+          <li>Python 3.10 или выше</li>
+        </ul>
+
+        <h4 style="text-align: left;">Настройка бота</h4>
+        <p style="text-align: left;">Для конфигурации бота используется файл .env с основными параметрами:</p>
+
+        <div style="background-color: #1e1e1e; border-radius: 8px; padding: 15px; margin: 15px 0; font-family: monospace; font-size: 14px; color: #d4d4d4; text-align: left;">
+          BOT_TOKEN=your_telegram_bot_token<br>
+          PORTFOLIO_URL=https://yourusername.github.io/ResumeAppBot/<br>
+          PORTFOLIO_WEB_APP_URL=https://yourusername.github.io/ResumeAppBot/<br>
+          ADMIN_ID=your_telegram_id
+        </div>
+
+        <p style="text-align: left;">Для запуска бота:</p>
+
+        <div style="background-color: #1e1e1e; border-radius: 8px; padding: 15px; margin: 15px 0; font-family: monospace; font-size: 14px; color: #d4d4d4; text-align: left;">
+          # Установка зависимостей<br>
+          pip install -r requirements.txt<br><br>
+          # Запуск бота<br>
+          python Bot/main.py
+        </div>
+
+        <h4 style="text-align: left;">Локальная разработка</h4>
+
+        <div style="background-color: #1e1e1e; border-radius: 8px; padding: 15px; margin: 15px 0; font-family: monospace; font-size: 14px; color: #d4d4d4; text-align: left;">
+          # Установка зависимостей<br>
+          npm install<br><br>
+          # Запуск в режиме разработки с HTTPS<br>
+          npm run dev --host
+        </div>
+
+        <p style="text-align: left;">Приложение будет доступно по адресу <code>https://localhost:5173/</code></p>
+
+        <h4 style="text-align: left;">Сборка проекта</h4>
+
+        <div style="background-color: #1e1e1e; border-radius: 8px; padding: 15px; margin: 15px 0; font-family: monospace; font-size: 14px; color: #d4d4d4; text-align: left;">
+          npm run build
+        </div>
+
+        <p style="text-align: left;">Собранные файлы будут помещены в директорию <code>docs/</code> для деплоя на GitHub Pages.</p>
+
+        <h3 style="text-align: left;">📁 Структура проекта (Frontend)</h3>
+
+        <div style="background-color: #1e1e1e; border-radius: 8px; padding: 15px; margin: 15px 0; font-family: monospace; font-size: 14px; color: #d4d4d4; text-align: left; white-space: pre-wrap;">
+ResumeAppBot/
+├── public/               # Статические файлы
+│   ├── screenshots/      # Скриншоты проектов
+│   └── 404.html          # Страница для обработки 404 ошибок
+├── src/
+│   ├── assets/           # Изображения и статические ресурсы
+│   ├── components/       # React компоненты
+│   │   ├── Button.tsx    # Компонент кнопок
+│   │   ├── Card.tsx      # Карточка проекта
+│   │   ├── ThemeToggle.tsx # Переключатель темы
+│   │   └── ...
+│   ├── utils/            # Утилиты и хелперы
+│   │   └── telegramWebApp.ts # Интеграция с Telegram Web App API
+│   ├── App.tsx           # Основной компонент приложения
+│   ├── main.tsx          # Точка входа React приложения
+│   └── ...
+├── .github/workflows/    # GitHub Actions конфигурация
+├── vite.config.ts        # Конфигурация Vite
+└── package.json          # Зависимости проекта
+        </div>
+
+        <h3 style="text-align: left;">📦 Деплой</h3>
+        <p style="text-align: left;">Проект настроен на автоматический деплой на GitHub Pages при пуше в ветку <code>main</code>:</p>
+        <ol style="text-align: left; padding-left: 20px;">
+          <li>GitHub Action запускает сборку проекта</li>
+          <li>Результат сборки из директории <code>docs/</code> деплоится на GitHub Pages</li>
+          <li>Приложение становится доступно по адресу <code>https://yourusername.github.io/ResumeAppBot/</code></li>
+        </ol>
+
+        <h3 style="text-align: left;">⚙️ Интеграция с Telegram Bot</h3>
+        <p style="text-align: left;">Для связывания с Telegram Bot:</p>
+        <ol style="text-align: left; padding-left: 20px;">
+          <li>Создайте бота через <a href="https://t.me/BotFather" style="color: #2481cc;">@BotFather</a></li>
+          <li>Настройте меню и команды бота</li>
+          <li>Добавьте WebApp URL через BotFather, указав URL вашего GitHub Pages</li>
+        </ol>
+
+        <h3 style="text-align: left;">🙏 Благодарности</h3>
+        <p style="text-align: left;">Проект создан на основе <a href="https://github.com/twa-dev/vite-boilerplate" style="color: #2481cc;">vite-boilerplate</a> от команды Telegram Mini Apps.</p>
+
+        <p style="text-align: left;">Дополнительные ресурсы:</p>
+        <ul style="text-align: left; padding-left: 20px;">
+          <li><a href="https://core.telegram.org/bots/webapps" style="color: #2481cc;">Telegram Mini Apps Documentation</a></li>
+          <li><a href="https://vitejs.dev/" style="color: #2481cc;">Vite Documentation</a></li>
+          <li><a href="https://reactjs.org/" style="color: #2481cc;">React Documentation</a></li>
+          <li><a href="https://github.com/python-telegram-bot/python-telegram-bot" style="color: #2481cc;">Python Telegram Bot</a></li>
+          <li><a href="https://core.telegram.org/bots/api" style="color: #2481cc;">Telegram Bot API</a></li>
+        </ul>
       `
     },
     {
