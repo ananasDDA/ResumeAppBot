@@ -288,7 +288,7 @@ function App() {
       description: 'Интерактивное портфолио в Telegram Mini Apps',
       imageUrl: './project2.png',
       technologies: ['React', 'TypeScript', 'Vite', 'Python'],
-      link: 'https://t.me/the_best_resume_bot',
+      link: 'https://github.com/ananasDDA/ResumeAppBot',
       screenshots: [
         {
           src: './screenshots/project2/start.jpg',
@@ -296,14 +296,29 @@ function App() {
         }
       ],
       fullDescription: `
-        <div style="position: relative; margin-bottom: 30px; text-align: left;">
-          <div style="position: relative; width: 100%; height: 300px; background-image: url('./screenshots/project2/webapp_desktop.jpg'); background-size: cover; background-position: center; border-radius: 8px; opacity: 0.3;">
-          </div>
-          <div style="position: absolute; top: 50%; right: 30px; transform: translateY(-50%); width: 180px; height: 360px; background-color: #111; border-radius: 36px; padding: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); border: 1px solid #333;">
-            <div style="width: 100%; height: 100%; border-radius: 28px; overflow: hidden; position: relative;">
-              <img src="./screenshots/project2/start.jpg" alt="Стартовый экран бота" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-          </div>
+        <div style="margin: 30px 0; text-align: center;">
+          <h4 style="text-align: left; margin-bottom: 15px;">Структура проекта</h4>
+          <pre style="text-align: left; background-color: #1e1e1e; color: #d4d4d4; padding: 15px; border-radius: 8px; overflow-x: auto; font-size: 14px;">
+ResumeAppBot/
+├── public/               # Статические файлы
+│   ├── screenshots/      # Скриншоты проектов
+│   └── 404.html          # Страница для обработки 404 ошибок
+├── src/
+│   ├── assets/           # Изображения и статические ресурсы
+│   ├── components/       # React компоненты
+│   │   ├── Button.tsx    # Компонент кнопок
+│   │   ├── Card.tsx      # Карточка проекта
+│   │   └── ...
+│   ├── utils/            # Утилиты и хелперы
+│   │   └── telegramWebApp.ts # Интеграция с Telegram Web App API
+│   ├── App.tsx           # Основной компонент приложения
+│   └── main.tsx          # Точка входа React приложения
+├── Bot/                  # Код Telegram бота
+│   ├── main.py           # Основной файл бота
+│   ├── config.py         # Конфигурация бота
+│   └── keyboards.py      # Клавиатуры и интерфейс бота
+└── vite.config.ts        # Конфигурация Vite
+          </pre>
         </div>
 
         <h2 style="text-align: left;">ResumeAppBot - Интерактивное портфолио в Telegram Mini Apps</h2>
