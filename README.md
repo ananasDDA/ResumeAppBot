@@ -1,9 +1,9 @@
 # ResumeAppBot - Интерактивное портфолио в Telegram Mini Apps
 
-<p align="center">
+<!-- <p align="center">
   <img width="200" src="./src/assets/logo.png">
 </p>
-
+ -->
 
 <!-- ## 📱 Демонстрация -->
 
