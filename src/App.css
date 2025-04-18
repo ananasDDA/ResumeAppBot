@@ -689,3 +689,24 @@ h2 {
   line-height: 1.5;
   color: var(--geist-foreground);
 }
+
+/* Принудительное включение темной темы */
+:root, body {
+  color-scheme: dark only !important;
+}
+
+/* Отключаем медиа-запросы для светлой темы */
+@media (prefers-color-scheme: light) {
+  :root.dark-theme {
+    --geist-foreground: #fff !important;
+    --geist-background: #000 !important;
+    --geist-accent-1: #111 !important;
+    --geist-accent-2: #333 !important;
+    --geist-accent-3: #444 !important;
+    --geist-accent-4: #666 !important;
+    --geist-accent-5: #888 !important;
+    --geist-accent-6: #999 !important;
+    --geist-accent-7: #eaeaea !important;
+    --geist-accent-8: #fafafa !important;
+  }
+}
