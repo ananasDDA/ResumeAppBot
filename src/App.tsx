@@ -43,6 +43,9 @@ function App() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   useEffect(() => {
+    // Очистка сохраненной темы при каждом запуске (опционально)
+    // localStorage.removeItem('theme');
+
     // Инициализация Telegram Web App
     if (isTelegramWebApp()) {
       initTelegramWebApp();
@@ -62,11 +65,9 @@ function App() {
     const savedTheme = localStorage.getItem('theme');
 
     if (savedTheme) {
-      // Если есть сохраненная тема, используем её
       setIsDarkMode(savedTheme === 'dark');
       document.documentElement.className = savedTheme === 'dark' ? 'dark-theme' : 'light-theme';
     } else {
-      // Если нет сохраненной темы, всегда используем темную тему
       setIsDarkMode(true);
       document.documentElement.className = 'dark-theme';
       localStorage.setItem('theme', 'dark');
