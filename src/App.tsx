@@ -43,9 +43,10 @@ function App() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   useEffect(() => {
-    // Очистка сохраненной темы при каждом запуске (опционально)
-    // localStorage.removeItem('theme');
+    // Применяем темную тему сразу при монтировании компонента
+    document.documentElement.className = 'dark-theme';
 
+    // Остальной код инициализации...
     // Инициализация Telegram Web App
     if (isTelegramWebApp()) {
       initTelegramWebApp();

@@ -32,6 +32,16 @@ window.addEventListener('error', (event) => {
   document.body.appendChild(errorDiv);
 });
 
+// В начале файла, до монтирования React-приложения
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+  document.documentElement.className = savedTheme === 'dark' ? 'dark-theme' : 'light-theme';
+} else {
+  // Всегда тёмная тема по умолчанию
+  document.documentElement.className = 'dark-theme';
+  localStorage.setItem('theme', 'dark');
+}
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <App />
