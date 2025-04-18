@@ -58,16 +58,18 @@ function App() {
       });
     }
 
-    // Проверка предпочтений темы
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    // Проверка сохраненных настроек темы
     const savedTheme = localStorage.getItem('theme');
 
     if (savedTheme) {
+      // Если есть сохраненная тема, используем её
       setIsDarkMode(savedTheme === 'dark');
       document.documentElement.className = savedTheme === 'dark' ? 'dark-theme' : 'light-theme';
     } else {
-      setIsDarkMode(prefersDark);
-      document.documentElement.className = prefersDark ? 'dark-theme' : 'light-theme';
+      // Если нет сохраненной темы, всегда используем темную тему
+      setIsDarkMode(true);
+      document.documentElement.className = 'dark-theme';
+      localStorage.setItem('theme', 'dark');
     }
   }, []);
 
