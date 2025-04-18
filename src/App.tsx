@@ -468,6 +468,133 @@ ResumeAppBot/
     },
     {
       id: 3,
+      title: 'MusicHall Audio Support Bot',
+      description: 'Telegram-бот поддержки клиентов с интерактивным каталогом товаров',
+      imageUrl: './screenshots/project3/support_bot.jpg',
+      technologies: ['Python', 'SQLite', 'Telegram Bot API', 'Docker'],
+      link: 'https://github.com/ananasDDA/ONEENERGYSupportBot',
+      screenshots: [
+        {
+          src: './screenshots/project3/main_menu.jpg',
+          caption: 'Главное меню бота'
+        },
+        {
+          src: './screenshots/project3/catalog.jpg',
+          caption: 'Каталог товаров'
+        },
+        {
+          src: './screenshots/project3/product_details.jpg',
+          caption: 'Информация о товаре'
+        },
+        {
+          src: './screenshots/project3/operator_chat.jpg',
+          caption: 'Чат с оператором'
+        }
+      ],
+      fullDescription: `
+        <div style="position: relative; margin: 50px 0 30px; text-align: left;">
+          <div style="position: relative; width: 100%; height: 300px; background-image: url('./screenshots/project3/support_bot_bg.jpg'); background-size: cover; background-position: center; border-radius: 8px; opacity: 0.3;">
+          </div>
+          <div style="position: absolute; top: 50%; right: 30px; transform: translateY(-50%); width: 180px; height: 360px; background-color: #111; border-radius: 36px; padding: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); border: 1px solid #333;">
+            <div style="width: 100%; height: 100%; border-radius: 28px; overflow: hidden; position: relative;">
+              <img src="./screenshots/project3/main_menu.jpg" alt="Главное меню бота" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+          </div>
+        </div>
+
+        <h2 style="text-align: left;">MusicHall Audio Support Bot</h2>
+
+        <p style="text-align: left;">
+          <a href="https://t.me/MusicHallAudio_bot" style="display: inline-block; margin-top: 10px; margin-bottom: 20px; padding: 8px 16px; background-color: #2481cc; color: white; text-decoration: none; border-radius: 6px; font-weight: bold;">
+            👉 Открыть бота в Telegram
+          </a>
+        </p>
+
+        <h3 style="text-align: left;">📱 Обзор проекта</h3>
+        <p style="text-align: left;">
+          MusicHall Audio Support Bot — это Telegram-бот, созданный для поддержки клиентов компании MusicHall Audio.
+          Бот предоставляет удобный доступ к каталогу продукции, информации о гарантии и возврате товара, а также
+          позволяет связаться с операторами поддержки.
+        </p>
+
+        <div style="background-color: #1e1e1e; border-radius: 8px; padding: 15px; margin: 15px 0; text-align: left;">
+          <p style="color: #f0f0f0; font-style: italic; margin: 0;">
+            💡 Проект может быть адаптирован под любой бренд и категорию товаров.
+          </p>
+        </div>
+
+        <h3 style="text-align: left;">✨ Основные функции для пользователей</h3>
+        <ul style="text-align: left; padding-left: 20px;">
+          <li><strong>Просмотр ассортимента товаров</strong> - навигация по брендам, категориям и конкретным товарам</li>
+          <li><strong>Информация о гарантии и возврате</strong> - доступ к политикам компании через меню</li>
+          <li><strong>Связь с оператором</strong> - интерактивный чат с операторами поддержки</li>
+          <li><strong>Быстрый доступ к маркетплейсам</strong> - прямые ссылки на товары в популярных маркетплейсах</li>
+        </ul>
+
+        <h3 style="text-align: left;">👨‍💼 Функции для администраторов</h3>
+        <ul style="text-align: left; padding-left: 20px;">
+          <li><strong>Управление каталогом товаров</strong> - добавление, редактирование и удаление товаров</li>
+          <li><strong>Обработка запросов клиентов</strong> - интерфейс для операторов поддержки</li>
+          <li><strong>Подробное логирование</strong> - отслеживание действий пользователей и операторов</li>
+          <li><strong>Аналитика</strong> - сбор статистики использования бота</li>
+        </ul>
+
+        <h3 style="text-align: left;">🛠️ Технические детали</h3>
+
+        <h4 style="text-align: left; margin-top: 15px;">Архитектура системы</h4>
+        <ul style="text-align: left; padding-left: 20px;">
+          <li><strong>Backend</strong>: Python с использованием библиотеки для работы с Telegram Bot API</li>
+          <li><strong>База данных</strong>: SQLite для хранения информации о товарах, пользователях и чатах</li>
+          <li><strong>Деплой</strong>: Docker-контейнеризация для простого развертывания на платформе Amvera</li>
+          <li><strong>Интеграция</strong>: Связь с каналами для логирования и хранения файлов</li>
+        </ul>
+
+        <h4 style="text-align: left; margin-top: 15px;">Структура базы данных</h4>
+        <ul style="text-align: left; padding-left: 20px;">
+          <li><strong>brands</strong> - таблица брендов товаров</li>
+          <li><strong>categories</strong> - таблица категорий товаров</li>
+          <li><strong>products</strong> - информация о товарах с ссылками и описаниями</li>
+          <li><strong>users</strong> - данные о пользователях и их взаимодействии с ботом</li>
+          <li><strong>chats</strong> - история диалогов с операторами</li>
+        </ul>
+
+        <h4 style="text-align: left; margin-top: 15px;">Примеры команд администратора</h4>
+        <div style="background-color: #1e1e1e; border-radius: 8px; padding: 15px; margin: 15px 0; font-family: monospace; font-size: 14px; color: #d4d4d4; text-align: left; white-space: pre-wrap;">
+/add_product [MusicHall] [Наушники] [HD-660] [123456] [ozon:https://ozon.ru/link wb:https://wildberries.ru/link] [789012]
+
+/delete_product [MusicHall] [Наушники] [HD-660]
+
+/reply 1234567890 Здравствуйте! Спасибо за обращение. На ваш вопрос о совместимости наушников...
+        </div>
+
+        <h3 style="text-align: left;">📊 Пример взаимодействия пользователя с ботом</h3>
+        <ol style="text-align: left; padding-left: 20px;">
+          <li>Пользователь запускает бота и получает приветственное сообщение с основным меню</li>
+          <li>Выбирает раздел "Наш ассортимент" и переходит к выбору бренда</li>
+          <li>Последовательно выбирает бренд, категорию и конкретный товар</li>
+          <li>Получает подробную информацию о товаре с фото и ссылками на маркетплейсы</li>
+          <li>При необходимости связывается с оператором для получения дополнительной консультации</li>
+        </ol>
+
+        <h3 style="text-align: left;">🔧 Системные требования</h3>
+        <ul style="text-align: left; padding-left: 20px;">
+          <li>Python 3.11+</li>
+          <li>Доступ в интернет</li>
+          <li>Диск: минимум 100 МБ</li>
+          <li>ОЗУ: минимум 256 МБ</li>
+        </ul>
+
+        <h3 style="text-align: left;">🚀 Перспективы развития</h3>
+        <ul style="text-align: left; padding-left: 20px;">
+          <li>Интеграция с системами аналитики и CRM</li>
+          <li>Добавление автоматических ответов на часто задаваемые вопросы</li>
+          <li>Реализация системы отзывов о товарах</li>
+          <li>Создание веб-интерфейса администратора для более удобного управления</li>
+        </ul>
+      `
+    },
+    {
+      id: 100,
       title: 'InProgress',
       description: 'Проект на стадии разработки',
       imageUrl: './screenshots/project3/inprogress.jpg',
