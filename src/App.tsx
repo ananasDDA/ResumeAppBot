@@ -472,7 +472,7 @@ ResumeAppBot/
       description: 'Telegram-бот поддержки клиентов с интерактивным каталогом товаров',
       imageUrl: './screenshots/project3/support_bot.jpg',
       technologies: ['Python', 'SQLite', 'Telegram Bot API', 'Docker'],
-      link: 'https://github.com/ananasDDA/oneenergy-sales-bot',
+      link: 'https://github.com/ananasDDA/ResumeAppBot',
       screenshots: [
         {
           src: './screenshots/project3/main_menu.jpg',
