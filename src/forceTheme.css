@@ -1,0 +1,9 @@
+/* Этот файл принудительно блокирует системные предпочтения темы */
+@media (prefers-color-scheme: light) {
+  :root.dark-theme {
+    /* Повторяем все переменные темной темы здесь */
+    --background: #121212 !important;
+    --text-color: #ffffff !important;
+    /* другие переменные с !important */
+  }
+}

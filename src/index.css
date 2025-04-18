@@ -41,42 +41,23 @@
   -webkit-text-size-adjust: 100%;
 }
 
-/* Светлая тема на основе Figma дизайна */
+/* Вместо этого используйте только классы для тем */
+:root.dark-theme {
+  --background: #121212;
+  --text-color: #ffffff;
+  /* все остальные переменные темной темы */
+}
+
 :root.light-theme {
-  --geist-foreground: #000;
-  --geist-background: #f8f8f8;
-  --geist-selection: #79ffe1;
-  --geist-secondary: #666;
-  --geist-accent-1: #fafafa;
-  --geist-accent-2: #eaeaea;
-  --geist-accent-3: #999;
-  --geist-accent-4: #888;
-  --geist-accent-5: #666;
-  --geist-accent-6: #444;
-  --geist-accent-7: #333;
-  --geist-accent-8: #111;
-  --geist-success: #0070f3;
-  --geist-error: #e00;
-  --geist-warning: #f5a623;
-  --geist-violet: #7928ca;
-  --geist-violet-light: #8a63d2;
-  --geist-violet-dark: #4c2889;
-  --geist-cyan: #50e3c2;
-  --geist-cyan-light: #79ffe1;
-  --geist-cyan-dark: #29bc9b;
-  --geist-highlight-purple: #f81ce5;
-  --geist-highlight-magenta: #eb367f;
-  --geist-highlight-pink: #ff0080;
-  --geist-highlight-yellow: #fff500;
-  --geist-code: #f81ce5;
-  --geist-border-radius: 5px;
-  --geist-shadow-small: 0 5px 10px rgba(0, 0, 0, 0.12);
-  --geist-shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.12);
-  --geist-shadow-large: 0 30px 60px rgba(0, 0, 0, 0.12);
-  --geist-shadow-hover: 0 30px 60px rgba(0, 0, 0, 0.12);
-  --geist-shadow-sticky: 0 12px 10px -10px rgba(0, 0, 0, 0.12);
-  --geist-marketing-gray: #fafbfc;
-  --geist-radius: 5px;
+  --background: #ffffff;
+  --text-color: #000000;
+  /* все остальные переменные светлой темы */
+}
+
+/* Базовые стили без привязки к теме */
+body {
+  background-color: var(--background);
+  color: var(--text-color);
 }
 
 * {
@@ -113,21 +94,4 @@ a:hover {
 
 button {
   font-family: inherit;
-}
-
-/* Медиа-запросы для темной темы */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --geist-foreground: #fff;
-    --geist-background: #000;
-    --geist-accent-1: #111;
-    --geist-accent-2: #333;
-    --geist-accent-3: #444;
-    --geist-accent-4: #666;
-    --geist-accent-5: #888;
-    --geist-accent-6: #999;
-    --geist-accent-7: #eaeaea;
-    --geist-accent-8: #fafafa;
-    --geist-success: #0070f3;
-  }
 }

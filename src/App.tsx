@@ -43,8 +43,38 @@ function App() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   useEffect(() => {
-    // Применяем темную тему сразу при монтировании компонента
-    document.documentElement.className = 'dark-theme';
+    // Функция для принудительного применения темной темы
+    function forceDarkTheme() {
+      document.documentElement.className = 'dark-theme';
+
+      // Создаем инлайн стиль для переопределения системных предпочтений
+      const styleEl = document.createElement('style');
+      styleEl.innerHTML = `
+        :root {
+          --background: #121212 !important;
+          --text-color: #ffffff !important;
+          /* Добавьте другие переменные вашей темной темы */
+        }
+        body {
+          background-color: var(--background) !important;
+          color: var(--text-color) !important;
+        }
+      `;
+      document.head.appendChild(styleEl);
+    }
+
+    // Вызываем функцию при монтировании
+    forceDarkTheme();
+
+    // Восстанавливаем сохраненную тему, если она есть
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      setIsDarkMode(savedTheme === 'dark');
+      document.documentElement.className = savedTheme === 'dark' ? 'dark-theme' : 'light-theme';
+    } else {
+      setIsDarkMode(true);
+      localStorage.setItem('theme', 'dark');
+    }
 
     // Остальной код инициализации...
     // Инициализация Telegram Web App
@@ -60,18 +90,6 @@ function App() {
         setCurrentView('main');
         hideBackButton();
       });
-    }
-
-    // Проверка сохраненных настроек темы
-    const savedTheme = localStorage.getItem('theme');
-
-    if (savedTheme) {
-      setIsDarkMode(savedTheme === 'dark');
-      document.documentElement.className = savedTheme === 'dark' ? 'dark-theme' : 'light-theme';
-    } else {
-      setIsDarkMode(true);
-      document.documentElement.className = 'dark-theme';
-      localStorage.setItem('theme', 'dark');
     }
   }, []);
 
