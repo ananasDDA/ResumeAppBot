@@ -4,22 +4,18 @@ import App from './App.tsx'
 import './index.css'
 import './theme.css'
 
-// Добавляем скрипт Telegram Web App API
 const telegramScript = document.createElement('script');
 telegramScript.src = 'https://telegram.org/js/telegram-web-app.js';
 telegramScript.async = true;
 document.head.appendChild(telegramScript);
 
-// Добавляем шрифт Inter
 const interFont = document.createElement('link');
 interFont.rel = 'stylesheet';
 interFont.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap';
 document.head.appendChild(interFont);
 
-// Add global error handler for debugging
 window.addEventListener('error', (event) => {
   console.error('Global error:', event.error);
-  // Create a visible error message on the page
   const errorDiv = document.createElement('div');
   errorDiv.style.position = 'fixed';
   errorDiv.style.top = '0';

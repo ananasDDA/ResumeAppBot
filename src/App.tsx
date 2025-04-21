@@ -8,7 +8,6 @@ import { FiUser, FiBriefcase, FiCode, FiGithub, FiSend, FiArrowLeft, FiExternalL
 import ThemeToggle from './components/ThemeToggle'
 import ScreenshotsCarousel from './components/ScreenshotsCarousel'
 
-// Типы для секций портфолио
 type Project = {
   id: number;
   title: string;
@@ -16,16 +15,15 @@ type Project = {
   imageUrl?: string;
   technologies: string[];
   link?: string;
-  fullDescription?: string; // Добавляем полное описание для страницы проекта
-  screenshots?: (string | { src: string; caption?: string })[]; // Убираем device и landscape
+  fullDescription?: string;
+  screenshots?: (string | { src: string; caption?: string })[];
 };
 
-// Добавляем тип для навигации
 type AppView = 'main' | 'project-details';
 
 type Skill = {
   name: string;
-  level: number; // 1-5
+  level: number;
 };
 
 type SkillCategory = {
@@ -38,12 +36,10 @@ function App() {
   const [userName, setUserName] = useState<string | null>(null);
   const [isDarkMode, setIsDarkMode] = useState(true);
 
-  // Добавляем состояния для навигации
   const [currentView, setCurrentView] = useState<AppView>('main');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   useEffect(() => {
-    // Инициализация Telegram Web App
     if (isTelegramWebApp()) {
       initTelegramWebApp();
       const user = getTelegramUser();
@@ -51,25 +47,21 @@ function App() {
         setUserName(user.first_name);
       }
 
-      // Добавляем обработчик кнопки "Назад" в Telegram
       window.Telegram.WebApp.onEvent('backButtonClicked', () => {
         setCurrentView('main');
         hideBackButton();
       });
     }
 
-    // Проверяем, было ли ручное переключение темы пользователем
     const userSelectedTheme = localStorage.getItem('userSelectedTheme');
 
     if (userSelectedTheme === 'light') {
-      // Применяем светлую тему только если пользователь сам её выбрал ранее
       setIsDarkMode(false);
       document.documentElement.className = 'light-theme';
       const root = document.documentElement;
       root.style.setProperty('--geist-foreground', '#000');
       root.style.setProperty('--geist-background', '#fff');
     } else {
-      // Во всех остальных случаях устанавливаем темную тему
       setIsDarkMode(true);
       document.documentElement.className = 'dark-theme';
       const root = document.documentElement;
@@ -79,17 +71,13 @@ function App() {
     }
   }, []);
 
-  // Функция переключения темы - также обновляем
   const toggleTheme = () => {
     const newTheme = !isDarkMode;
     setIsDarkMode(newTheme);
     document.documentElement.className = newTheme ? 'light-theme' : 'dark-theme';
-
-    // Сохраняем выбор темы пользователем
     localStorage.setItem('userSelectedTheme', newTheme ? 'light' : 'dark');
     localStorage.setItem('theme', newTheme ? 'light' : 'dark');
 
-    // Добавляем задержку для применения стилей
     setTimeout(() => {
       const root = document.documentElement;
       if (newTheme) {
@@ -102,7 +90,6 @@ function App() {
     }, 10);
   };
 
-  // Функция для открытия страницы проекта
   const openProjectDetails = (project: Project) => {
     setSelectedProject(project);
     setCurrentView('project-details');
@@ -111,7 +98,6 @@ function App() {
     }
   };
 
-  // Функция для возврата на главную страницу
   const goBack = () => {
     setCurrentView('main');
     if (isTelegramWebApp()) {
@@ -119,7 +105,6 @@ function App() {
     }
   };
 
-  // Демо-данные для портфолио (замените на свои)
   const projects: Project[] = [
     {
       id: 1,
@@ -795,7 +780,6 @@ ResumeAppBot/
     );
   };
 
-  // Рендер секции "Проекты" с возможностью перехода на страницу проекта
   const renderProjects = () => (
     <div className="section">
       <h2>Мои проекты</h2>
@@ -826,8 +810,8 @@ ResumeAppBot/
                 type="secondary"
                 size="small"
                 onClick={(e) => {
-                  e.stopPropagation(); // Останавливаем всплытие события
-                  openProjectDetails(project); // Явно вызываем функцию открытия проекта
+                  e.stopPropagation();
+                  openProjectDetails(project);
                 }}
               >
                 <span>Подробнее</span>
@@ -839,7 +823,6 @@ ResumeAppBot/
     </div>
   );
 
-  // Рендер секции "Навыки"
   const renderSkills = () => (
     <div className="section">
       <h2>Мои навыки</h2>

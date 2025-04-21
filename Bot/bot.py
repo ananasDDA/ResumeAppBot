@@ -5,20 +5,16 @@ import platform
 import datetime
 from config import BOT_TOKEN, RESUME, PORTFOLIO_URL, PORTFOLIO_WEB_APP_URL, ADMIN_ID
 
-# Настройка логирования
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     level=logging.INFO
 )
 logger = logging.getLogger(__name__)
 
-# Создаем экземпляр бота
 bot = telebot.TeleBot(BOT_TOKEN)
 
-# Путь к PDF-файлу резюме
 RESUME_PDF_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'resume_LaTeX', 'resume.pdf')
 
-# Клавиатуры
 def get_main_keyboard():
     """Основная клавиатура бота"""
     markup = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True)
@@ -48,7 +44,6 @@ def get_contact_keyboard():
     ))
     return markup
 
-# Обработчики команд
 @bot.message_handler(commands=['start'])
 def start_command(message):
     """Обработчик команды /start"""
@@ -56,12 +51,10 @@ def start_command(message):
     user_id = message.from_user.id
     username = message.from_user.username or "Нет username"
 
-    # Отправляем уведомление администратору о новом пользователе
     if ADMIN_ID:
         try:
             current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-            # Формируем сообщение для администратора
             admin_message = (
                 f"🔔 <b>Новый пользователь запустил бота!</b>\n\n"
                 f"👤 <b>Имя:</b> {user_name}\n"
@@ -70,7 +63,6 @@ def start_command(message):
                 f"⏰ <b>Время:</b> {current_time}"
             )
 
-            # Отправляем сообщение администратору
             bot.send_message(
                 int(ADMIN_ID),
                 admin_message,
@@ -87,7 +79,6 @@ def start_command(message):
         "Выберите раздел, чтобы узнать больше:"
     )
 
-    # Отправляем приветственное сообщение с клавиатурой
     bot.send_message(
         message.chat.id,
         greeting,
@@ -95,7 +86,6 @@ def start_command(message):
         parse_mode="HTML"
     )
 
-# Обработчик текстовых сообщений
 @bot.message_handler(content_types=['text'])
 def text_message_handler(message):
     """Обработчик текстовых сообщений"""
@@ -112,7 +102,6 @@ def text_message_handler(message):
             experience_text += f"<b>📌 {job['position']}</b> в <b>{job['company']}</b>\n"
             experience_text += f"<i>⏱️ {job['period']}</i>\n\n"
 
-            # Разбиваем описание на отдельные пункты для лучшей читаемости
             description_points = job['description'].split('. ')
             for point in description_points:
                 if point.strip():  # Проверяем, что пункт не пустой
@@ -128,16 +117,13 @@ def text_message_handler(message):
         )
 
     elif text == "Резюме":
-        # Отправляем краткую информацию о резюме
         bot.send_message(
             message.chat.id,
             "Отправляю вам моё резюме в формате PDF...",
             reply_markup=get_main_keyboard()
         )
 
-        # Проверяем существование файла
         if os.path.exists(RESUME_PDF_PATH):
-            # Отправляем PDF-файл резюме
             with open(RESUME_PDF_PATH, 'rb') as resume_file:
                 bot.send_document(
                     message.chat.id,
@@ -145,14 +131,12 @@ def text_message_handler(message):
                     caption=f"Резюме {RESUME['name']} - {RESUME['position']}"
                 )
 
-            # Отправляем контактные кнопки
             bot.send_message(
                 message.chat.id,
                 "Мои контакты:",
                 reply_markup=get_contact_keyboard()
             )
         else:
-            # Если файл не найден, отправляем текстовую версию резюме
             logger.error(f"PDF-файл резюме не найден по пути: {RESUME_PDF_PATH}")
 
             skills_text = ", ".join(RESUME['skills'])
@@ -176,7 +160,6 @@ def text_message_handler(message):
                 reply_markup=get_main_keyboard()
             )
 
-            # Отправляем контактные кнопки
             bot.send_message(
                 message.chat.id,
                 "Мои контакты:",
@@ -184,7 +167,6 @@ def text_message_handler(message):
             )
 
     elif text == "Портфолио":
-        # Отправляем сообщение с информацией о портфолио и ссылкой
         portfolio_message = (
             "Моё интерактивное портфолио доступно по ссылке:\n"
             f"<a href='{PORTFOLIO_URL}'>Открыть портфолио</a>\n\n"
@@ -195,7 +177,7 @@ def text_message_handler(message):
             message.chat.id,
             portfolio_message,
             parse_mode="HTML",
-            disable_web_page_preview=False,  # Показываем превью веб-страницы
+            disable_web_page_preview=False,
             reply_markup=get_portfolio_keyboard()
         )
 
@@ -211,14 +193,11 @@ if __name__ == '__main__':
     try:
         logger.info("Запуск бота...")
 
-        # Отправляем уведомление администратору о запуске бота
         if ADMIN_ID:
             try:
-                # Получаем информацию о системе
                 system_info = platform.uname()
                 current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-                # Формируем сообщение
                 startup_message = (
                     f"🤖 <b>Бот запущен!</b>\n\n"
                     f"⏰ <b>Время запуска:</b> {current_time}\n"
@@ -228,9 +207,8 @@ if __name__ == '__main__':
                     f"Бот готов к работе и ожидает сообщений от пользователей."
                 )
 
-                # Отправляем сообщение администратору
                 bot.send_message(
-                    int(ADMIN_ID),  # Преобразуем строку в число
+                    int(ADMIN_ID),
                     startup_message,
                     parse_mode="HTML"
                 )

@@ -10,7 +10,8 @@ ONEENERGY Support Bot - это Telegram-бот, созданный для под
 
 <!-- ![Bot Logo](https://via.placeholder.com/150?text=ONEENERGY+Bot) -->
 
-### [🤖 Начать общение с ботом](https://t.me/oneenergysupportbot)
+### [🤖 Начать общение с ботом](https://t.me/MusicHallAudio_bot)
+### [🔍 Посмотреть код бота](https://github.com/ananasDDA/ONEENERGYSupportBot)
 
 ## Содержание
 1. [Функции для пользователей](#функции-для-пользователей)
