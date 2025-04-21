@@ -73,11 +73,24 @@ function App() {
     }
   }, []);
 
+  // Функция переключения темы - обновленная версия
   const toggleTheme = () => {
     const newTheme = !isDarkMode;
-    setIsDarkMode(!isDarkMode);
+    setIsDarkMode(newTheme);
     document.documentElement.className = newTheme ? 'light-theme' : 'dark-theme';
     localStorage.setItem('theme', newTheme ? 'light' : 'dark');
+
+    // Добавляем задержку для применения стилей
+    setTimeout(() => {
+      const root = document.documentElement;
+      if (newTheme) {
+        root.style.setProperty('--geist-foreground', '#000');
+        root.style.setProperty('--geist-background', '#fff');
+      } else {
+        root.style.setProperty('--geist-foreground', '#fff');
+        root.style.setProperty('--geist-background', '#000');
+      }
+    }, 10);
   };
 
   // Функция для открытия страницы проекта

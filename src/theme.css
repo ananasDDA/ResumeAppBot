@@ -1,0 +1,123 @@
+/* Темная тема (по умолчанию) */
+:root.dark-theme {
+  --geist-background: #000;
+  --geist-foreground: #fff;
+  --geist-accent-1: #111;
+  --geist-accent-2: #333;
+  --geist-accent-3: #444;
+  --geist-accent-4: #666;
+  --geist-accent-5: #888;
+  --geist-success: #0070f3;
+  --geist-highlight-purple: #7928ca;
+  --geist-highlight-pink: #ff0080;
+  --geist-radius: 5px;
+  --geist-shadow-small: 0 5px 10px rgba(0, 0, 0, 0.12);
+  --geist-shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Светлая тема */
+:root.light-theme {
+  --geist-background: #fff;
+  --geist-foreground: #000;
+  --geist-accent-1: #fafafa;
+  --geist-accent-2: #eaeaea;
+  --geist-accent-3: #999;
+  --geist-accent-4: #666;
+  --geist-accent-5: #444;
+  --geist-success: #0070f3;
+  --geist-highlight-purple: #8a3ffc;
+  --geist-highlight-pink: #e6007e;
+  --geist-radius: 5px;
+  --geist-shadow-small: 0 5px 10px rgba(0, 0, 0, 0.12);
+  --geist-shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Градиентные элементы для темной темы */
+:root.dark-theme .gradient-circle.red {
+  background-color: rgba(233, 63, 63, 0.2);
+  filter: blur(50px);
+}
+
+:root.dark-theme .gradient-circle.blue {
+  background-color: rgba(63, 100, 233, 0.2);
+  filter: blur(50px);
+}
+
+:root.dark-theme .gradient-circle.yellow {
+  background-color: rgba(255, 184, 0, 0.2);
+  filter: blur(50px);
+}
+
+/* Градиентные элементы для светлой темы */
+:root.light-theme .gradient-circle.red {
+  background-color: rgba(233, 63, 63, 0.3);
+  filter: blur(40px);
+}
+
+:root.light-theme .gradient-circle.blue {
+  background-color: rgba(63, 100, 233, 0.3);
+  filter: blur(40px);
+}
+
+:root.light-theme .gradient-circle.yellow {
+  background-color: rgba(255, 184, 0, 0.3);
+  filter: blur(40px);
+}
+
+/* Основной фон для темной и светлой темы */
+:root.dark-theme .gradient-background {
+  background-color: var(--geist-background);
+}
+
+:root.light-theme .gradient-background {
+  background-color: var(--geist-background);
+}
+
+/* Дополнительные корректировки для светлой темы */
+:root.light-theme .project-card,
+:root.light-theme .about-card,
+:root.light-theme .skills-card,
+:root.light-theme .contact-card {
+  background-color: var(--geist-accent-1);
+  box-shadow: var(--geist-shadow-small);
+}
+
+:root.light-theme .app-navigation {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-top: 1px solid var(--geist-accent-2);
+}
+
+/* Корректировка цвета текста */
+:root.light-theme {
+  color: var(--geist-foreground);
+}
+
+:root.dark-theme {
+  color: var(--geist-foreground);
+}
+
+/* Создаем больший контраст между темами */
+:root.light-theme .gradient-background::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(121, 40, 202, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+  filter: blur(50px);
+}
+
+:root.light-theme .gradient-background::after {
+  content: '';
+  position: absolute;
+  top: -150px;
+  left: 30%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 0, 128, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+  filter: blur(50px);
+}

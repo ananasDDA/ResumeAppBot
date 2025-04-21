@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import { resolve } from 'path'
+import path from 'path'
 import fs from 'fs'
 
 // https://vitejs.dev/config/
@@ -10,13 +10,13 @@ export default defineConfig({
     {
       name: 'create-nojekyll-and-cname',
       closeBundle() {
-        const outDir = resolve(__dirname, 'docs');
-        fs.writeFileSync(resolve(outDir, '.nojekyll'), '');
+        const outDir = path.resolve(__dirname, 'docs');
+        fs.writeFileSync(path.resolve(outDir, '.nojekyll'), '');
         // Also copy 404.html to the output directory
-        if (fs.existsSync(resolve(__dirname, 'public', '404.html'))) {
+        if (fs.existsSync(path.resolve(__dirname, 'public', '404.html'))) {
           fs.copyFileSync(
-            resolve(__dirname, 'public', '404.html'),
-            resolve(outDir, '404.html')
+            path.resolve(__dirname, 'public', '404.html'),
+            path.resolve(outDir, '404.html')
           );
         }
       }
@@ -25,5 +25,10 @@ export default defineConfig({
   build: {
     outDir: 'docs'
   },
-  base: '/ResumeAppBot/'
+  base: '/ResumeAppBot/',
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src')
+    }
+  }
 });

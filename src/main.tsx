@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
+import './theme.css'
 
 // Добавляем скрипт Telegram Web App API
 const telegramScript = document.createElement('script');
