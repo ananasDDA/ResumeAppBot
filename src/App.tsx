@@ -58,26 +58,35 @@ function App() {
       });
     }
 
-    // Проверка сохраненных настроек темы
-    const savedTheme = localStorage.getItem('theme');
+    // Проверяем, было ли ручное переключение темы пользователем
+    const userSelectedTheme = localStorage.getItem('userSelectedTheme');
 
-    if (savedTheme) {
-      // Если есть сохраненная тема, используем её
-      setIsDarkMode(savedTheme === 'dark');
-      document.documentElement.className = savedTheme === 'dark' ? 'dark-theme' : 'light-theme';
+    if (userSelectedTheme === 'light') {
+      // Применяем светлую тему только если пользователь сам её выбрал ранее
+      setIsDarkMode(false);
+      document.documentElement.className = 'light-theme';
+      const root = document.documentElement;
+      root.style.setProperty('--geist-foreground', '#000');
+      root.style.setProperty('--geist-background', '#fff');
     } else {
-      // Если нет сохраненной темы, всегда используем темную тему
+      // Во всех остальных случаях устанавливаем темную тему
       setIsDarkMode(true);
       document.documentElement.className = 'dark-theme';
+      const root = document.documentElement;
+      root.style.setProperty('--geist-foreground', '#fff');
+      root.style.setProperty('--geist-background', '#000');
       localStorage.setItem('theme', 'dark');
     }
   }, []);
 
-  // Функция переключения темы - обновленная версия
+  // Функция переключения темы - также обновляем
   const toggleTheme = () => {
     const newTheme = !isDarkMode;
     setIsDarkMode(newTheme);
     document.documentElement.className = newTheme ? 'light-theme' : 'dark-theme';
+
+    // Сохраняем выбор темы пользователем
+    localStorage.setItem('userSelectedTheme', newTheme ? 'light' : 'dark');
     localStorage.setItem('theme', newTheme ? 'light' : 'dark');
 
     // Добавляем задержку для применения стилей
